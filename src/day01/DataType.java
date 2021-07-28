@@ -43,6 +43,6 @@ public class DataType {
         System.out.println(100 + "200");
 
 //        System.out.println("200" - 100);
-        
+
     }
 }
