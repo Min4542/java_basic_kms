@@ -18,8 +18,8 @@ public class RandomExample {
         * (int)(Math.random() *10)+1 -> 1 <= ~ <11
         *
         * #공식: x이상 y이하의 랜덤 정수 (y미만 일 때 1만 더해준다다)
-       * (int) (Math.random() * (y-x+1))+x
-        * */
+        * (int) (Math.random() * (y-x+1))+x
+        */
 
 
         int ri = (int) (Math.random() * 10 + 1); // alr + enter
