@@ -17,7 +17,7 @@ public class ArrayPush {
             temp[i] = arr[i];
         }
 
-        //3. 추가할 데이터를 맨 마지막 위치에 저징
+        //3. 추가할 데이터를 맨 마지막 위치에 저장
         temp[temp.length-1] =newData;
 
         //4.주소값 이전
