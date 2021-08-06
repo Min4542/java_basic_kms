@@ -56,7 +56,7 @@ public class Roulette {
 //        ===================게임시작 코드=============================
 //          선턴 플레이어 랜덤 결정
 //        System.out.println("랜덤 숫자 :" + ranNum);
-        int ranNum = (int)(Math.random()*playerNum); //랜덤 호명
+        int ranNum = (int) (Math.random() * playerNum); //랜덤 호명
         System.out.printf("\n총을 돌렸습니다. %s부터 시작합니다.\n", players[ranNum]);
 
         //한 턴 내에서 해야 할 일
@@ -66,28 +66,65 @@ public class Roulette {
         3. 사망판정: 실탄이 있었다면 사망처리, 없었다면 다음 턴으로 넘어감
         */
 
+
         while (true) {
-            System.out.printf("\n[%s님의 턴 !] 실린더를 돌립니다.\n",players[ranNum]);
-            int bulletPosition = (int) (Math.random() *magazin.length);
+            System.out.printf("\n[%s님의 턴 !] 실린더를 돌립니다.\n", players[ranNum]);
+            int bulletPosition = (int) (Math.random() * magazin.length);
             System.out.println(" # 엔터를 누르면 격발합니다.");
             sc.nextLine();
 
             //사망 판정
-            if(magazin[bulletPosition]){
+            if (magazin[bulletPosition]) {
                 System.out.printf("\n빵!! [%s]님 사망....\n", players[ranNum]);
-                break;
-            }else {
+                //사망자를 players배열에서 삭제
+                for (int i = ranNum; i < players.length - 1; i++) {
+                    players[i] = players[i + 1];
+                }
+                String[] temp = new String[players.length - 1];
+                for (int i = 0; i < temp.length; i++) {
+                    temp[i] = players[i];
+                }
+                players = temp;
+                temp = null;
+                playerNum--;
+//                    System.out.println("남은 인원:"+Arrays.toString(players));
+
+                //탄창 배열에서 총알이 나간 위치를 재조정
+                magazin[bulletPosition] = false;
+                bullet--;
+
+                //게임 종료 조건 판단
+                //남은 플레이어가 1명일 때, 총알이 모두 소진되었을때
+                if (playerNum == 1) {
+                    System.out.println("\n단 한명만 살아남았습니다. 게임을 종료 합니다.");
+                    System.out.println("최후의 생존자:" + players[0]);
+                    break;
+                } else if (bullet == 0) {
+                    System.out.println("\n총알이 모두 발사되었습니다. 게임을 종료합니다.");
+                    System.out.println("남은 인원 정보:"+Arrays.toString(players));
+                    break;
+                }else {
+                    System.out.println("남은 인원으로 계속 게임을 계속 진행합니다.");
+                    System.out.println("남은 인워 정보:" +Arrays.toString(players));
+                    //혹시 사망자가 마지막 플레이어라면 ranNum을 0으로 조정
+                    if (ranNum == players.length){
+                        ranNum=0;
+                    }
+                    continue;
+                }
+            } else {
                 //생존한 경우 : 턴을 넘김
                 System.out.println(" 휴.... 살았습니다!!!");
-                if(ranNum == players.length-1){
+                if (ranNum == players.length - 1) {
                     //마지막 플레이어는 턴을 첫번째로 돌려놓는다.
                     ranNum = 0;
-                }else {
+                } else {
                     ranNum++;
                 }
             }
         }
-
-
     }
+
+
 }
+
