@@ -36,6 +36,28 @@ public class PhoneFactory {
 
         Phone lgv6 = new Phone("LG V6","에메랄드 그린");
         lgv6.showSpec();
+
+        System.out.println("============================");
+        iPhoneX.battery = new Battery("샤오미");
+
+        System.out.println("아이폰x 배터리:"+iPhoneX.battery.company);
+
+        System.out.printf("=================================\n");
+
+
+        galaxyS21.sendMessage(iPhoneX,"에에에에에베베베");
+        galaxyS21.sendMessage(iPhoneX,"에에에에에베베베");
+
+        iPhoneX.checkMessages();
+
+        iPhoneX.sendMessage(galaxyS21,"wtf");
+        galaxyS21.checkMessages();
+
+        galaxyS21.sendMessage(lgv6,"dhkfdhkf");
+        iPhoneX.sendMessage(lgv6,"fkf");
+
+        lgv6.checkMessages();
+
     }
 }
 
