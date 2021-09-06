@@ -6,7 +6,7 @@ public class main {
         Player noName = new Player();
         noName.info();
 
-       /* Player kim = new Player("김철수");
+        Player kim = new Player("김철수");
 
 
         Player park = new Player("박찬호");
@@ -21,6 +21,6 @@ public class main {
 
 
         ko.attack(kim);
-*/
+
     }
 }
