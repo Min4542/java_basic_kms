@@ -2,9 +2,9 @@ package com.kh.practice.student.model.vo;
 
 public class Student {
 
-    private  String name; //이름
-    private  String subject; //과목
-    private  int score; //점수
+    private String name; //이름
+    private String subject; //과목
+    private int score; //점수
 
     public Student() {
 
@@ -18,11 +18,11 @@ public class Student {
         this.score = score;
     }
 
-    public String inform(){
+    public String inform() {
         return this.name + "|" + this.subject + "|" + this.score;
     }
 
-    // getter/setter
+    /////////////// getter/setter ///////////////
     public String getName() {
         return name;
     }
