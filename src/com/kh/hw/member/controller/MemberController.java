@@ -132,10 +132,13 @@ public class MemberController {
                     break;
                 }
             }
-            for (int i=0; i<10; i++) {
-                m[idx] = m[idx + 1];
-                m[idx + 1] = null;
+            for (int i = idx; i < existMemberNum(); i++) {
+                if(idx == existMemberNum()){
+                    m[idx] =null;
+                }
+                m[i] = m[i+1];
             }
+
 
             return true;
         }else {
