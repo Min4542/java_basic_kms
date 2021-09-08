@@ -154,7 +154,7 @@ public class MemberController {
     }
 
     public Member[] printAll() {
-        return null;
+        return m;
     }
 
 }
