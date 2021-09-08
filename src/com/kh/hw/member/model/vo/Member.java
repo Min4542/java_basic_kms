@@ -20,8 +20,9 @@ public class Member {
         this.age = age;
     }
 
-    public String inform(String id, String name, String password, String email, char gender, int age){
-        return id + '|' + name + '|' + password + '|' + email + '|' + gender + '|' +age;
+    public String inform() {
+        return String.format("%s | %s | %s | %s | %c | %d "
+                , id, name, password, email, gender, age);
     }
 
     public String getId() {
@@ -71,4 +72,6 @@ public class Member {
     public void setAge(int age) {
         this.age = age;
     }
+
+
 }
