@@ -124,25 +124,48 @@ public class MemberController {
     //회원정보 하나를 삭제하는 메서드
     public boolean delete(String id) {
 
-        if (!checkId(id)) {
-            int idx = 0;
-            for (int i = 0; i < SIZE; i++) {
-                if (id.equals(m[i].getId())) {
-                    idx = i;
-                    break;
-                }
+        //선생님 해설
+        int count = existMemberNum();
+
+        //삭제할 데이터 인덱스 구하기
+        int delIdx = -1;
+        for (int i = 0; i < count; i++) {
+            if (id.equals(m[i].getId())){
+                delIdx = i;
+                break;
             }
-            for (int i = idx; i < existMemberNum(); i++) {
-                if(idx == existMemberNum()){
-                    m[idx] =null;
-                }
+        }
+
+        if (delIdx != -1){
+            for (int i = delIdx; i < count-1 ; i++) {
                 m[i] = m[i+1];
             }
-
-
+            m[count - 1] =null;
             return true;
-        }else {
-            return false;}
+        }
+
+
+        return  false;
+
+
+
+//        if (!checkId(id)) {
+//            int idx = 0;
+//            for (int i = 0; i < existMemberNum(); i++) {
+//                if (id.equals(m[i].getId())) {
+//                    idx = i;
+//                    break;
+//                }
+//            }
+//            for (int i = idx; i < existMemberNum(); i++) {
+//                if(idx == existMemberNum()){
+//                    m[idx+1] =null;
+//                }
+//                m[i] = m[i+1];
+//            }
+//            return true;
+//        }else {
+//            return false;}
     }
 
     public void delete() {
