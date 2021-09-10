@@ -2,8 +2,8 @@ package day12.player;
 
 public class Player {
 
-    String name;
-    int level;
+ public String name;
+     int level;
     int hp;
 
     public Player() {
@@ -14,9 +14,10 @@ public class Player {
         this.hp =50;*/
     }
 
-    public Player(String name) {
-        this(name,1);
-        System.out.printf("2번 생성자");
+    public Player(String Nickname) {
+        this.name = Nickname;
+        this.level = 1;
+        this.hp =50;
     }
 
     public Player(String name, int level) {
@@ -30,7 +31,7 @@ public class Player {
         System.out.printf("%s가 %s를 공격합니다.\n",this.name,target.name);
     }
 
-    void info(){
+    public void info(){
         System.out.printf("이름: %s, 레벨: %d, 체력: %d\n",this.name,this.level,this.hp);
     }
 }
