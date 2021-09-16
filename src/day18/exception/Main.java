@@ -11,7 +11,10 @@ public class Main {
         }
 
         System.out.println("잔액: "+account.getBalance());
-        System.out.println("프로그램 종료!!");
+        String x = "프로그램 종료!!";
+        System.out.println(x);
+
+
 
     }
 }
