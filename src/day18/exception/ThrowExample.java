@@ -29,7 +29,7 @@ public class ThrowExample {
 
         Test test = null;
         try {
-            test = new Test(12);
+            test = new Test(0);
         } catch (Exception e) {
 
             e.printStackTrace();

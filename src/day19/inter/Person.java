@@ -12,4 +12,10 @@ public class Person {
         }
     }
 
+    public void orderShark() {
+        Shark shark = new Shark();
+        shark.attack();
+        String s;
+    }
+
 }

@@ -1,6 +1,6 @@
 package day19.inter;
 
-public class Dog extends Animal implements Pet {
+public class Dog extends Animal implements Pet,Violent {
 
     @Override
     public void eat() {
@@ -12,4 +12,8 @@ public class Dog extends Animal implements Pet {
         System.out.println("강이자는 뛰면서 놀아요~");
     }
 
+    @Override
+    public void attack() {
+
+    }
 }
